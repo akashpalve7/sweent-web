@@ -1,12 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="bg-white border-t">
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div>
+        <Link href="/">
+          <Image
+            src="/logo.jpg"
+            alt="Site Logo"
+            width={150}
+            height={150}
+            priority
+            className="cursor-pointer"
+          />
+        </Link>
+        {/* <div>
           <h3 className="font-semibold text-lg">Sweent</h3>
-        </div>
+        </div> */}
 
         <div>
           <h4 className="font-semibold">Quick links</h4>
@@ -14,11 +25,12 @@ export default function Footer() {
             <li>
               <Link href="/">Home</Link>
             </li>
-            <li>
-              <Link href="/blog">Blog</Link>
-            </li>
+
             <li>
               <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
@@ -44,7 +56,9 @@ export default function Footer() {
 
       <div className="border-t bg-slate-50">
         <div className="max-w-6xl mx-auto px-4 py-4 text-sm text-slate-600 flex justify-between">
-          <div>© {new Date().getFullYear()} Sweent. All rights reserved.</div>
+          <div>
+            © {new Date().getFullYear()} Muskegon LLC. All rights reserved.
+          </div>
           <div>Built with ❤️</div>
         </div>
       </div>
